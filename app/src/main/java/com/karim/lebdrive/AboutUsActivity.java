@@ -19,7 +19,7 @@ public class AboutUsActivity extends AppCompatActivity {
         arrowClicked();
     }
 
-    public void arrowClicked(){
+    public void arrowClicked() {
         ImageView img = findViewById(R.id.back_logo);
         TextView txt = findViewById(R.id.back_text_view);
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);

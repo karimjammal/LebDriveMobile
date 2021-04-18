@@ -28,7 +28,6 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:background="@color/blue_3"
             android:text="@string/start_btn_txt" />
 
         <Button
@@ -36,7 +35,6 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@color/blue_3"
             android:text="@string/info_btn_txt" />
 
         <Button
@@ -44,15 +42,22 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@color/blue_3"
             android:onClick="aboutBtnClicked"
             android:text="@string/about_btn_txt" />
 
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="calendarBtnClicked"
+        android:src="@drawable/outline_event_white_24" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/app_name" />
-
 </LinearLayout>

@@ -16,15 +16,15 @@
             android:id="@+id/back_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/outline_arrow_back_ios_24" />
 
         <TextView
+            android:id="@+id/back_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/back_text_view"
-            android:hint="Go Back"
-            android:layout_marginTop="11dp"/>
+            android:layout_marginTop="11dp"
+            android:hint="Go Back" />
     </LinearLayout>
 
 
@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center_horizontal"
             android:padding="10dp"
             android:text="@string/about_us1_txt" />
@@ -60,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center_horizontal"
             android:padding="10dp"
             android:text="@string/about_us2_txt" />
@@ -73,10 +75,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center_horizontal"
             android:padding="10dp"
             android:text="@string/about_us3_txt" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/app_name" />
 
 </LinearLayout>
