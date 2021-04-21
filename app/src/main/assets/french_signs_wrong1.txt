@@ -1,0 +1,151 @@
+Dispositif surélevé
+Cassis
+Virage à gauche
+Virage à droite
+Double virage, le premier à gauche
+Double virage, le premier à droite
+Passage à niveau sans barrières
+Passage à niveau avec barrières
+Cassis
+Endroit spécialement fréquenté par des enfants
+Zone scolaire
+Interdit aux animaux
+Interdit aux animaux
+Circuler à droite
+Virage interdit
+Attention, intersection sans priorité
+Attention, route à deux voies
+Attention, intersection à droite
+Attention. Rencontre avec une route principale sur la droite
+Attention. Rencontre avec une route principale sur la gauche
+Attention, croix à la droite
+Attention, croix à la gauche
+Cédez le passage
+Accès interdit aux piétons
+Accès interdit aux bicyclettes
+Cassis
+Rétrécissement de la chaussée à droite
+Rétrécissement de la chaussée à droite
+Rétrécissement de la chaussée
+Travaux
+Circulation interdite à tout véhicule dans les deux sens
+Devant toi se trouve un aéroport
+Virage à droite
+Accès interdit au piétons
+Cédez le passage
+Danger non défini
+passage aux véhicules débouchant de la route située à sa droite
+Intersection avec une route sans priorité
+Stationnement interdit
+Sens interdit à tout véhicule
+Circulation interdite à tout véhicule dans les deux sens
+Interdiction aux véhicules de transports de marchandise de doubler
+Vitesse minimale obligatoire
+Stationnement interdit
+Route réservée aux camions
+Passage autorisé aux véhicules transportant des animaux
+Passage autorisé aux piétons
+Passage autorisé aux deux roues
+Passage autorisé aux cyclomoteurs
+Stationnement interdit aux poussettes
+Accès interdit aux véhicules transportant des marchandises dangereuses
+Passage interdit aux camions de plus de 2,3m de longueur
+Direction obligatoire pour les camions
+La cargaison ne doit pas dépasser les 10m en hauteur
+Passage interdit aux camions de plus de 7 m de hauteur
+Passage interdit aux camions transportant plus de 2 tonnes de cargaison
+Début de signalisation restrictive
+Limite de vitesse
+Obligation de tourner à gauche
+Obligation d'aller tout droit ou de tourner à droite
+Interdit de tourner à gauche ou à droite
+Obligation aux camions de tourner à droite
+Interdit de tourner à gauche
+Il est possible de tourner à droite
+Il est possible d'aller tout droit
+Interdit de tourner à gauche ou à droite
+Passage interdit aux cycle
+Passage obligatoire à droite
+Obligation de tourner
+Fin de dépassement interdit aux bus
+Passage interdit aux camions dont le poids dépasse les 6.5 tonnes
+Route obligatoire pour les camions
+Route obligatoire pour les camions
+Stationnement à durée limitée pour les véhicules agricoles
+Accès interdit aux véhicules transportant des marchandises explosives
+Accès interdit aux véhicules transportant des marchandises polluantes
+Fin de la zone 'interdit aux camions de dépasser'
+Voie réservée aux camions
+Sens interdit
+Sens interdit
+Interdit de s'arrêter içi
+Interdit de stationner à gauche
+Interdit de stationner à droite
+Interdit de stationner pour plus de 30 minutes
+Vitesse maximale: 30 km/heure
+Attention, route glissante
+Parc
+Voie réservée aux piétons
+Stationnement interdit aux deux roues
+Obligation de tourner à gauche
+Attention, pont mobile
+Attention, passage interdit aux piétons
+Point de rencontre de deux voies
+Attention, piste de décollage et d'atterrissage
+Pont au-dessus de la route
+Pont
+Stationnement interdit aux handicapés
+Zone de stationnement réservée aux handicapés
+Réservé aux médecins
+Zone de stationnement pour tous genres de véhicules- deux voitures taxi au maximum
+Enlèvement immédiat
+Centre d'internet
+Zone de stationnement pour police
+Intersection dangereuse 
+Garage
+Rafraîchissements
+Hotel
+Cabine téléphonique publique
+Information
+Poste de d'épannage
+Arrêt de tramway
+Terrain de camping pour caravnes
+Terrain de camping pour tentes
+Auberge de jeunesse
+Passage à niveau avec barrières
+Stationnement interdit
+Fin de chemin obligatoire pour cavaliers
+Fin de voie réservée aux véhicules de transport en commun
+L'usage de l'avertisseur sonore est interdit
+Chemin obligatoire pour cavaliers
+Voie réservée aux véhicules de transport en commun
+Chaïnes à neige obligatoire
+Stationnement gratuit 
+Stationnement payant
+Stationnement
+Fin de Vitesse conseillée
+Vitesse conseillée
+Arrêt interdit au tramway
+Direction obligatoire à la prochaine intersection: tout droit
+Début d'une section autoroute
+Réduction du nombre des voies
+Deux voies dans un sens et une voie dans l'autre
+Deux voies dans un sens et une voie dans l'autre
+Accès interdit aux véhicules a moteur, motocycles et cyclomoteurs
+Bureau d'information
+Bureau d'information
+Accès interdit aux piétons
+Panneau de signalisation avancée d'aire sur route
+Panneau de position comportant une indication de distance
+Panneau de signalisation avancée de bifurcation autoroutière
+Panneau de présignalisation diagrammatique à sens giratoires
+Panneau de présignalisation diagrammatique à sens giratoires
+Pannea d'avertissement de bifurcation autoroutière simple
+Panneau de signalisation avancée d'affectation de voies de bifurcation autoroutière
+Panneau de confirmation de filante utilisé sur autoroute
+Panneau d'aéroport
+Sortie
+Balisage des virages sur routes fréquemment enneigées
+Signalisation de position des intersections de routes
+Balisage des virages
+Délinéateur. Balisage des limites de chaussées

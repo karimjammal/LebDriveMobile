@@ -1,0 +1,151 @@
+Chaussée glissante
+Descente dangereuse
+Carrefour à sens giratoire
+Direction obligatoire à la prochaine intersection à gauche
+Circulation admise dans les deux sens
+Circulation admise dans les deux sens
+Passage piétons
+Arrêt de tramway
+Descente dangereuse
+Passage piétons
+Passage piétons
+Animaux errants
+Traversée de bétail
+Attention, intersection sans priorité
+Attention, dangers divers
+Attention, priorité aux véhicules venant en face
+Virage interdit
+Attention, priorité aux véhicules venant en face
+Une intersection majeure avec une route majeure
+Une intersection majeure avec une route majeure
+Une intersection majeure avec une route secondaire
+Une intersection majeure avec une route secondaire
+Arrêt à l'intersection
+Endroit spécialement fréquenté par des enfants
+Accès interdit au cyclomoteurs
+Dispositif surélevé
+Rétrécissement de la chaussée à gauche
+Rétrécissement de la chaussée
+Rétrécissement de la chaussée à gauche
+Danger non défini
+Arrêt à l'intersection
+Zone dangereuse
+Chaussée glissante
+Passage piétons
+Bureau d'information
+Arrêt à l'intersection
+Intersection avec une route sans priorité
+Indication du caractère prioritaire d'une route
+Cédez le passage
+Arrêt à l'intersection
+Arrêt à l'intersection
+Attention, route à deux voies
+Fin de limitation de vitesse
+Théatre
+Dépassement permis aux camions
+Passage interdit aux piétons
+Attention, voie résérvée aux piétons
+Voie résérvée aux deux roues
+Voie résérvée aux cyclomoteurs
+Voie réservée aux poussettes
+Voie résérvée aux voitures
+Interdit aux voitures de stationner
+Accès interdit aux véhicules transportant des marchandises explosives
+Passage interdit aux camions
+Passage interdit aux camions de plus de 3.5 tonnes
+Passage interdit aux camions portant plus de 7 tonnes par pneu
+Passage interdit aux camions transportant plus de 2 tonnes de cargaison
+Excès de vitesse interdit
+Début de limite de vitesse
+Interdit de tourner à droite
+Interdit de tourner à gauche
+Obligation d'aller tout droit
+Interdit de tourner à gauche
+Passage obligatoire à gauche
+Voie principale
+Interdit de tourner à droite
+Il est possible de tourner à droite
+Piste ou bande obligatoire pour les cycles
+Sens de circulation
+Sens de circulation
+Voie réservée aux bus
+Voie réservée aux camions
+Stationnement interdit aux camions
+Passage interdit aux camions transportant des matières dangereuses
+Voie réservée aux véhicules agricoles
+Accès interdit aux véhicules transportant des marchandises polluantes
+Accès interdit aux véhicules transportant des marchandises dangereuses
+Attention, route à deux voies
+Attention, route à deux voies
+Dépassement interdit aux véhicules de tous genres
+Stationnement interdit
+Interdit de passer dans cette direction
+Interdit de tourner à gauche
+Interdit de tourner à droite
+Vitesse maximale obligatoire
+Interdit de stationner pour plus de 30 minutes
+Enlever les chaînes à neige
+Passage interdit aux piétons
+Passage piéton audessus de la route
+Passage interdit aux deux roues
+Interdit de stationner à gauche
+Route à deux voies connectée à un pont
+Fin de la voie réservée aux piétons
+Chemin menant à une route principale
+Attention, pont
+Attention, route étroite
+Attention, route rugueuse
+Stationnement à durée limitée
+Stationnemen interdit aux taxis
+Information
+Station service
+Pompiers
+Virage indirect vers la gauche
+Restaurant
+Information
+Restaurant
+Information
+Poste de d'épannage
+Cabine téléphonique publique
+Arrêt interdit aux autobus
+Auberge de jeunesse
+Terrain de camping pour tentes
+Terrain de camping pour caravnes
+Passage à niveau sans barrières
+Arrêt et stationnement interdit
+Accès interdit aux véhicules à traction animales
+Arrêt d'autobus
+Fin d'interdiction de dépasser
+Accès interdit aux véhicules à traction animales
+Arrêt d'autobus
+Chaussée glissante
+Stationnement payant
+Stationnement
+Stationnement gratuit
+Vitesse minimale obligatoire
+Fin de limitation de vitesse
+Fin de l'arrêt de tramway
+Cédez le passage à la circulation venant en sens inverse
+Réduction du nombre des voies
+Priorité par rapport à la circulation venant en sens inverse
+Début d'une section autoroute
+Début d'une section autoroute
+Interdiction de dépasser tous les véhicules
+Poste d'appel d'urgence
+Poste d'appel d'urgence
+Passage permit pour piétons
+Panneau de signalisation avancée de bifurcation autoroutière
+Panneau de signalisation avancée d'aire sur route
+Panneau de position comportant une indication de distance
+Pannea d'avertissement de bifurcation autoroutière simple
+Pannea d'avertissement de bifurcation autoroutière simple
+Panneau de signalisation avancée d'affectation de voies de bifurcation autoroutière
+Panneau de présignalisation diagrammatique à sens giratoires
+Panneau d'aéroport
+Sortie
+Panneau de confirmation de filante utilisé sur autoroute
+Signalisation de position des intersections de routes
+Balisage des virages
+Balisage des virages sur routes fréquemment enneigées
+Plaque rétro-fléchissant jaune pour têtes d'ïlots
+Balisage de virages

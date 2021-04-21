@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027496942710",
+    "project_id": "lebdrive-da673",
+    "storage_bucket": "lebdrive-da673.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027496942710:android:ec738867a7d5fda70c5357",
+        "android_client_info": {
+          "package_name": "com.karim.lebdrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027496942710-sb67php1mead716l6bbd5q214j00b479.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEIXGSw9b_IR4U_-bGAG9jGZ4hELeOG7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027496942710-sb67php1mead716l6bbd5q214j00b479.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

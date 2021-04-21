@@ -1,0 +1,151 @@
+Cassis
+Raised device
+Right turn
+Left turn
+Double bend, the first to the right
+Double bend, the first to the left
+Level crossing with barriers
+Level crossing without barriers
+Slippery road
+School zone
+Place especially frequented by children
+Cattle crossing
+Attention stray animals
+Attention, two-lane road
+roundabouts
+Intersection where the driver must give way to vehicles emerging from the road to his right
+Give way to oncoming traffic
+Intersection with a road without priority
+Attention, cross to the right
+Attention, cross to the left
+Watch out for an encounter with a highway on the right
+Watch out for an encounter with a motorway on the left
+Indication of the priority of a route
+Pedestrian pathway
+Crossing for riders of bicycles and mopeds on two roads
+Dangerous descent
+Road narrows
+Narrowing of the roadway on the left
+Narrowing of the roadway on the right
+Falling rocks
+Traffic light announcement
+Low altitude aircraft flyby
+Lateral wind
+Works
+Danger not defined
+Yield
+End of the priority character of a route
+Priority over oncoming traffic
+Stop at the intersection
+Traffic prohibited for all vehicles in both directions
+Direction prohibited to any vehicle
+Prohibition to overtake all vehicles
+Speed ​​limit
+Horn prohibited
+Overtaking prohibited for trucks
+Passage prohibited for vehicles carrying animals
+Crossing prohibited for pedestrians
+Passage forbidden to two wheels
+Passage forbidden to mopeds
+Passage forbidden to strollers
+Passage forbidden to vehicles of all kinds
+Access prohibited to vehicles carrying polluting goods
+Passage forbidden to cars over 2.3m wide
+Passage prohibited for trucks over 3.5m high
+Passage prohibited for trucks over 10 m in length
+Passage prohibited for trucks carrying more than 7 tonnes of cargo
+Passage prohibited for trucks weighing more than the number indicated on one axle
+End of restrictive signage
+End of speed limits
+Turn right
+Turn left
+It is possible to turn left or right
+It is possible to go straight or turn right
+It is possible to go straight or turn left
+Compulsory passage on the left
+Mandatory passage on the right
+Mandatory passage to the right or to the left
+End of track compulsory for cylce
+Forbidden to turn right
+Forbidden to turn
+Passage forbidden to buses
+Passage forbidden to trucks
+Passage prohibited for trucks with a cargo weight exceeding 6.5 tonnes
+Passage prohibited for agricultural vehicles
+Access prohibited for vehicles carrying dangerous goods
+Access prohibited to vehicles transporting explosive goods
+End of the 'passing prohibited' zone
+End of the 'no trucks to overtake' zone
+Parking forbidden
+Forbidden to stop and park
+Obligation to go straight
+Direction left
+Direction to the right
+Mandatory minimum speed
+Mandatory minimum speed end
+Vehicles equipped with snow chains only
+Lane reserved for pedestrians
+End of the pedestrian lane
+Cycle path
+Forbidden to turn left
+Hospital
+Attention, pedestrian crossing
+Dead end
+Highway
+End of the highway
+Tunnel
+Disabled parking area
+Taxi parking area
+Police
+Information
+Local police
+Main track
+Hotel
+Restaurant
+Open cafe
+Breakdown station
+Public telephone booth
+Fuel dispensing station
+Bus stop
+Campground for tents
+Campground for caravans
+Youth hostel
+Single-track level crossing
+Entrance to a paid parking zone
+Mandatory path for riders
+Lane reserved for public transport vehicles
+End of ban on the use of the horn
+End of lane reserved for public transport vehicles
+End of obligation to use snow chains
+Parking
+Free parking
+Paid parking
+Recommended speed
+Recommended end of speed
+Tram stop
+One-way traffic
+Pre-signaling of a dead end
+Two lanes one way and one lane the other
+Reduction of the number of lanes
+Reduction of the number of lanes
+Signal announcing an area where speed is controlled by radar
+Help station
+Help station
+Toilets open to the public
+Position panel with distance indication
+Motorway fork advance warning sign
+Advanced area warning sign on road
+Motorway fork lane allocation forward traffic sign
+Motorway fork lane allocation forward traffic sign
+Roundabout diagrammatic warning sign
+Simple motorway fork warning sign
+Exit
+Filante confirmation sign used on motorway
+Airport sign
+Signposting of bends
+Marked bends on frequently snow-covered roads
+Position signaling of road intersections
+Signposting of bends
+Delineator. Marking of roadway limits
+Yellow retro-flexing plate for islet heads
+Mandatory end of the trail for riders
