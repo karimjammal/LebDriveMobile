@@ -45,26 +45,48 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private static final String french = "french";
     private static final String english = "english";
     private static final String arabic = "arabic";
-    Date currentDate;
-    long currentTime;
+    String examDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createNotifChannel();
-        currentDate = new Date();
-        currentTime = currentDate.getTime();
+        onStartUp();
+    }
 
-//        readQuestionsFile(english);
-//        readQuestionsFile(french);
-//        readQuestionsFile(arabic);
+    public void onStartUp() {
+        TextView textView = findViewById(R.id.exam_date_text_view);
+        try {
+            SQLiteOpenHelper sqLiteOpenHelper = new QuestionSQLiteOpenHelper(this);
+            SQLiteDatabase db = sqLiteOpenHelper.getReadableDatabase();
+
+            Cursor cursor = cursor = db.query("TEST_DATE",
+                    new String[]{"TEST_DAY"},
+                    "_id = ?", new String[]{Long.toString(1)}, null, null, null);
+
+            if (cursor.moveToFirst()) {
+                examDate = cursor.getString(0);
+                textView.setText("Your Exam Is On: \n" + examDate);
+            }
+
+            cursor = db.query("english_questions",
+                    new String[]{"QUESTION"},
+                    "_id = ?", new String[]{Long.toString(1)}, null, null, null);
+
+            if (!cursor.moveToFirst()) {
+                readQuestionsFile(english);
+                readQuestionsFile(french);
+                readQuestionsFile(arabic);
+            }
+        } catch (Exception e) {
+            System.out.println("!Exception Found!");
+        }
     }
 
     // OnClick method that takes the user to the Start Test Activity
@@ -97,38 +119,44 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        TextView textView = findViewById(R.id.exam_date_text_view);
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String setTime = DateFormat.getDateInstance(DateFormat.LONG).format(c.getTime());
 
-        long millisInADay = 86400 * 1000;
-        long triggerNotif = c.getTimeInMillis() - currentTime - millisInADay;
+        try {
+            SQLiteOpenHelper sqLiteOpenHelper = new QuestionSQLiteOpenHelper(this);
+            SQLiteDatabase db = sqLiteOpenHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("TEST_DAY", setTime);
 
-        Intent intent = new Intent(MainActivity.this, NotificationTrigger.class);
-        PendingIntent pendingIntent =  PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+            Cursor cursor = cursor = db.query("TEST_DATE",
+                    new String[]{"TEST_DAY"},
+                    "_id = ?", new String[]{Long.toString(1)}, null, null, null);
 
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            if (!cursor.moveToFirst()) // Inserting the questions as a first step
+                db.insert("TEST_DATE", null, contentValues);
+            else // updating the database to include all the attributes
+                db.update("TEST_DATE", contentValues, "_id = ?", new String[]{Long.toString(1)});
 
-        alarmManager.set(AlarmManager.RTC_WAKEUP,
-                triggerNotif,
-                pendingIntent);
+
+            SQLiteDatabase db2 = sqLiteOpenHelper.getReadableDatabase();
+            cursor = db2.query("TEST_DATE",
+                    new String[]{"TEST_DAY"},
+                    "_id = ?", new String[]{Long.toString(1)}, null, null, null);
+            if (cursor.moveToFirst()) {
+                examDate = cursor.getString(0);
+                textView.setText("Your Exam Is On: \n" + examDate);
+            }
+
+        } catch (Exception e) {
+            System.out.println("!Exception Found!");
+        }
+
 
         Toast.makeText(this, "Exam date set to: " + setTime, Toast.LENGTH_LONG).show();
-    }
-
-    private void createNotifChannel(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            CharSequence name = "LebDriveReminderChannel";
-            String description = "Channel for LebDrive";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("notifyMe", name, importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
     }
 
     private void readQuestionsFile(String language) {

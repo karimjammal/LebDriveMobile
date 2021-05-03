@@ -65,7 +65,10 @@ public class TestActivity extends AppCompatActivity {
         buttons = new Button[]{btn1, btn2, btn3};
 
         testTypePicker();
-        timer();
+        if (testType.equalsIgnoreCase("full"))
+            countdownTimer();
+        else
+            timer();
     }
 
     // Methods that check which test type is picked and displays accrodingly
@@ -113,6 +116,54 @@ public class TestActivity extends AppCompatActivity {
 
                 if (running) {
                     ticks++;
+                }
+
+                int seconds = ticks % 60;
+                int minutes = ticks / 60 % 60;
+
+                String timeElapsed = minutes + "\' " + seconds + "\"";
+                timerText.setText(timeElapsed);
+                handler.postDelayed(this, 1000);
+            }
+        });
+    }
+
+    public void countdownTimer() {
+        TextView timerText = findViewById(R.id.elapsed_time_text_view);
+        ticks = 15 * 60;
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (ticks == 0) {
+                    running = false;
+                    Intent intent = new Intent(TestActivity.this, ScoreActivity.class);
+                    intent.putExtra("Score", score);
+                    intent.putExtra("Test Language", language);
+                    startActivity(intent);
+                    return;
+                }
+
+                if (qstToDisplay >= 30) {
+                    if (btnClicked) {
+                        running = false;
+                        Handler h2 = new Handler();
+                        h2.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(TestActivity.this, ScoreActivity.class);
+                                intent.putExtra("Score", score);
+                                intent.putExtra("Test Language", language);
+                                startActivity(intent);
+                            }
+                        }, 1000);
+                        return;
+                    }
+                }
+
+                if (running) {
+                    ticks--;
                 }
 
                 int seconds = ticks % 60;

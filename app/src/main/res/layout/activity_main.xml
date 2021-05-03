@@ -10,8 +10,8 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="300dp"
         android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:src="@drawable/logo" />
@@ -19,36 +19,44 @@
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_weight="2"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/get_test_btn"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="testBtnClicked"
             android:layout_marginTop="50dp"
+            android:onClick="testBtnClicked"
             android:text="@string/start_btn_txt" />
 
         <Button
             android:id="@+id/info_btn"
-            android:layout_width="150dp"
-            android:onClick="infoBtnClicked"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:onClick="infoBtnClicked"
             android:text="@string/info_btn_txt" />
 
         <Button
             android:id="@+id/about_btn"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:onClick="aboutBtnClicked"
             android:text="@string/about_btn_txt" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/exam_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="Your Exam Is On: \n October 3, 2021" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/float_button"
@@ -59,16 +67,11 @@
         android:onClick="calendarBtnClicked"
         android:src="@drawable/outline_event_white_24" />
 
-    <FrameLayout
-        android:id="@+id/quiz_frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/app_name" />
 </LinearLayout>

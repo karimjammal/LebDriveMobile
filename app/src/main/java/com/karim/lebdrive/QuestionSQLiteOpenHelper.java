@@ -28,6 +28,10 @@ public class QuestionSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
+        db.execSQL("CREATE TABLE TEST_DATE(" +
+                "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "TEST_DAY TEXT);");
+
         db.execSQL("CREATE TABLE english_signs(" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "SIGN_RESOURCE_ID INTEGER," +

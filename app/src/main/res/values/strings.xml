@@ -11,7 +11,7 @@
     <!-- Strings used for the about us page -->
     <string name="about_us1_txt">LebDrive is an application that aims to prepare candidates for their theoretical test drive or as we call "Fa7es el Nazare".</string>
     <string name="about_us2_txt">LebDrive was fully developed and designed by a university student who, as you are, was not capable of studying for the test through a book.</string>
-    <string name="about_us3_txt">LebDrive will help you mark your test date and notify you one day prior to it. It also locates the various test centers. In addition, it is available in 3 different languages (Arabic, English and French).</string>
+    <string name="about_us3_txt">LebDrive will help you mark your test date. It also locates the various test centers. In addition, it is available in 3 different languages (Arabic, English and French).</string>
 
     <!--    Strings used for tests descriptions-->
     <string name="full_test_txt">Once you are ready, you can start with the full test. This is the official exam. It consists of 20 random driving law questions and 10 signs questions. You have 15 minutes to complete the test. You must score 25 or above to pass.</string>

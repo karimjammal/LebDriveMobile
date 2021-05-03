@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".TestFragment">
+    tools:context=".TestActivity">
 
     <TextView
         android:id="@+id/elapsed_time_text_view"
