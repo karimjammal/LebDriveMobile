@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         onStartUp();
     }
 
+    // Method that sets the exam date and checks if the database is
+    // empty in order to insert the questions and signs on start up
     public void onStartUp() {
         TextView textView = findViewById(R.id.exam_date_text_view);
         try {
