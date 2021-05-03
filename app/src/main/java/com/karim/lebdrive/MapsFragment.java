@@ -50,6 +50,10 @@ public class MapsFragment extends Fragment {
                     mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLngs.get(i)));
                 }
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngs.get(1),8));
+                mMap.animateCamera(CameraUpdateFactory.zoomIn());
+                mMap.animateCamera(CameraUpdateFactory.zoomTo(8), 1000, null);
             }
         });
         // Inflate the layout for this fragment

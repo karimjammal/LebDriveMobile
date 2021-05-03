@@ -38,8 +38,10 @@
     <string name="finish_txt_eng">You finished the test! Your score is:</string>
     <string name="finish_txt_fr">Vous avez terminé le test! Votre score est:</string>
     <string name="finish_txt_ar">لقد انتهيت من الاختبار! نتيجتك هي:</string>
-    <string name="title_activity_maps">Map</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--    Youtube Channel Link-->
+    <string name="youtube_channel"><a href="https://www.youtube.com/user/SydneyDrivingSchool">Onroad Driving School Sydney</a></string>
+
 
 </resources>
