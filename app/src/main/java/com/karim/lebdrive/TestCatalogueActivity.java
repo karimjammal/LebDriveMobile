@@ -1,6 +1,7 @@
 package com.karim.lebdrive;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -8,8 +9,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +26,8 @@ import java.util.List;
 public class TestCatalogueActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    String testType = "";
+    String language = "";
     List<TestType> typeList;
 
     @Override
@@ -25,6 +35,8 @@ public class TestCatalogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_catalogue);
 
+        Intent intent = getIntent();
+        testType = intent.getStringExtra("Test Type");
         recyclerView = findViewById(R.id.recyclerView);
         initData();
         setRecyclerView();
@@ -39,9 +51,10 @@ public class TestCatalogueActivity extends AppCompatActivity {
 
     private void initData() {
         typeList = new ArrayList<>();
-        typeList.add(new TestType("Full test", getString(R.string.full_test_txt), "Start Test"));
-        typeList.add(new TestType("Signs-only test", getString(R.string.signs_test_txt), "Start Test"));
-        typeList.add(new TestType("Questions-only test", getString(R.string.questions_test_txt), "Start Test"));
+
+        typeList.add(new TestType("Signs-only test", getString(R.string.signs_test_txt), "Start Signs Test"));
+        typeList.add(new TestType("Questions-only test", getString(R.string.questions_test_txt), "Start Questions Test"));
+        typeList.add(new TestType("Full test", getString(R.string.full_test_txt), "Start Full Test"));
     }
 
     public void arrowClicked() {
@@ -67,4 +80,5 @@ public class TestCatalogueActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -1,14 +1,20 @@
 package com.karim.lebdrive;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -16,6 +22,7 @@ import java.util.List;
 public class TestTypeAdapter extends RecyclerView.Adapter<TestTypeAdapter.TypeViewHolder> {
 
     List<TestType> typeList;
+    String test_type = "";
 
     public TestTypeAdapter(List<TestType> typeList) {
         this.typeList = typeList;
@@ -66,6 +73,43 @@ public class TestTypeAdapter extends RecyclerView.Adapter<TestTypeAdapter.TypeVi
                     TestType testType = typeList.get(getAdapterPosition());
                     testType.setExpandable(!testType.isExpandable());
                     notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+            startBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    test_type = startBtn.getText().toString();
+                    switch (test_type) {
+                        case "Start Full Test":
+                            test_type = "full";
+                            break;
+                        case "Start Questions Test":
+                            test_type = "questions";
+                            break;
+                        case "Start Signs Test":
+                            test_type = "signs";
+                            break;
+                    }
+                    String language = "";
+                    Spinner spinner = itemView.findViewById(R.id.language_spinner);
+                    String languageAb = String.valueOf(spinner.getSelectedItem());
+                    switch (languageAb) {
+                        case "AR":
+                            language = "arabic";
+                            break;
+                        case "EN":
+                            language = "english";
+                            break;
+                        case "FR":
+                            language = "french";
+                            break;
+                    }
+                    Intent intent = new Intent(v.getContext(), TestActivity.class);
+                    intent.putExtra("Test Type", test_type);
+                    intent.putExtra("Language", language);
+                    v.getContext().startActivity(intent);
+                    System.out.println("testtype: " + test_type);
                 }
             });
         }
