@@ -41,6 +41,10 @@ public class MapsFragment extends Fragment {
 
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
+
+            // When map is ready, this method loops through the entries of the
+            // ArrayList (latLngs) and places the marker, it finishes by zooming in
+            // on the marker entitled "Driving Test Center - Jounieh"
             public void onMapReady(@NonNull GoogleMap googleMap) {
                 mMap = googleMap;
 

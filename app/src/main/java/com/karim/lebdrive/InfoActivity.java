@@ -28,6 +28,7 @@ public class InfoActivity extends AppCompatActivity {
         arrowClicked();
     }
 
+    // Method that displays the map along the various test centers
     public void checkCenters() {
         Button checkCentersBtn = findViewById(R.id.check_centers_button);
 
@@ -53,6 +54,7 @@ public class InfoActivity extends AppCompatActivity {
         });
     }
 
+    // Method that displays some driving tutorials using a Youtube API
     public void checkVideos() {
         Button checkVideoBtn = findViewById(R.id.check_videos_button);
 
@@ -78,6 +80,7 @@ public class InfoActivity extends AppCompatActivity {
         });
     }
 
+    // Method to trigger the back button
     public void arrowClicked() {
         ImageView img = findViewById(R.id.back_logo);
         TextView txt = findViewById(R.id.back_text_view);

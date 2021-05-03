@@ -23,7 +23,6 @@ public class TestActivity extends AppCompatActivity {
     private long id;
     String language = "";
     String testType = "";
-    View view;
     Button btn1;
     Button btn2;
     Button btn3;
@@ -43,13 +42,17 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
         Intent intent = getIntent();
+        // Getting the languages picked by the user
         language = intent.getStringExtra("Language");
-
         System.out.println("testtype: " + language);
+
+        // Getting the type of the test (Full, Signs-only, Questions-only)
         testType = intent.getStringExtra("Test Type");
+        System.out.println("testtype: " + testType);
+
+        // Initializing score to 0 and questions to 1
         TextView scoreTxt = findViewById(R.id.score_text_view);
         TextView qstDisplay = findViewById(R.id.question_nbr_text_view);
-
         scoreTxt.setText("Score: 0/30");
         qstDisplay.setText("1/30");
 
@@ -62,6 +65,7 @@ public class TestActivity extends AppCompatActivity {
         timer();
     }
 
+    // Methods that check which test type is picked and displays accrodingly
     public void testTypePicker() {
         if (testType.equalsIgnoreCase("questions"))
             startQuestionQuiz(language);
@@ -75,6 +79,7 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
+    // Method to check the test's ellapsed time
     public void timer() {
         TextView timerText = findViewById(R.id.elapsed_time_text_view);
 
@@ -106,12 +111,14 @@ public class TestActivity extends AppCompatActivity {
         });
     }
 
+    // Method that displays the "Questions" questions of the test
     public void startQuestionQuiz(String language) {
         int rand = 0;
         int correctAnswer = 0;
         TextView questionTxt = findViewById(R.id.question_text_view);
         questionTxt.setVisibility(View.VISIBLE);
 
+        // Re-initializing colors of the buttons
         btn1.setBackgroundColor(getResources().getColor(R.color.blue_3));
         btn2.setBackgroundColor(getResources().getColor(R.color.blue_3));
         btn3.setBackgroundColor(getResources().getColor(R.color.blue_3));
@@ -141,12 +148,14 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
+    // Method that displays the "Signs" questions of the test
     public void startSignQuiz(String language) {
         int rand = 0;
         int correctAnswer = 0;
         ImageView imageView = findViewById(R.id.sign_image);
         imageView.setVisibility(View.VISIBLE);
 
+        // Re-initializing colors of the buttons
         btn1.setBackgroundColor(getResources().getColor(R.color.blue_3));
         btn2.setBackgroundColor(getResources().getColor(R.color.blue_3));
         btn3.setBackgroundColor(getResources().getColor(R.color.blue_3));
@@ -176,6 +185,8 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
+    // Method that picks the "Question" question,
+    // and checks if it was already displayed or not
     public int chooseQuestionId() {
         int pickId = (int) (Math.random() * 239) + 1;
         while (questionArr.contains(pickId))
@@ -185,6 +196,8 @@ public class TestActivity extends AppCompatActivity {
         return pickId;
     }
 
+    // Method that picks the "Sign" question,
+    // and checks if it was already displayed or not
     public int chooseSignId() {
         int pickId = (int) (Math.random() * 151) + 1;
         while (signsArr.contains(pickId))
@@ -194,6 +207,8 @@ public class TestActivity extends AppCompatActivity {
         return pickId;
     }
 
+    // Method to assign the correct answer to any
+    // of the 3 buttons and returns the correct (or button) place of the answer
     public int dispenseAnswers(Button[] btn, String[] txt) {
         ArrayList<Integer> randNbrs = new ArrayList<>();
         int random = (int) (Math.random() * 3) + 1;
@@ -211,6 +226,9 @@ public class TestActivity extends AppCompatActivity {
         return correctPlace;
     }
 
+    // Method to check the correct answer. Each button has its own click listener
+    // Each will behave according to being pressed, which explains the use of 3 click listeners
+    // And a repetitive but custom method
     public void checkAnswer(int answer) {
         TextView scoreTxt = findViewById(R.id.score_text_view);
         TextView qstDisplay = findViewById(R.id.question_nbr_text_view);
@@ -236,6 +254,9 @@ public class TestActivity extends AppCompatActivity {
                     qstNbr++;
                     qstDisplay.setText(qstNbr + "/30");
                 }
+
+                // Delay in displaying the next question, in order to
+                // let the users check for their correct/wrong answers
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {

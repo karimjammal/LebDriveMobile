@@ -27,7 +27,6 @@ public class TestCatalogueActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     String testType = "";
-    String language = "";
     List<TestType> typeList;
 
     @Override
@@ -38,6 +37,7 @@ public class TestCatalogueActivity extends AppCompatActivity {
         Intent intent = getIntent();
         testType = intent.getStringExtra("Test Type");
         recyclerView = findViewById(R.id.recyclerView);
+
         initData();
         setRecyclerView();
         arrowClicked();
@@ -52,11 +52,13 @@ public class TestCatalogueActivity extends AppCompatActivity {
     private void initData() {
         typeList = new ArrayList<>();
 
+        // Initializing the content of the CardViews
         typeList.add(new TestType("Signs-only test", getString(R.string.signs_test_txt), "Start Signs Test"));
         typeList.add(new TestType("Questions-only test", getString(R.string.questions_test_txt), "Start Questions Test"));
         typeList.add(new TestType("Full test", getString(R.string.full_test_txt), "Start Full Test"));
     }
 
+    // Method to trigger the back button
     public void arrowClicked() {
         ImageView img = findViewById(R.id.back_logo);
         TextView txt = findViewById(R.id.back_text_view);

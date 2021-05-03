@@ -19,6 +19,7 @@ public class AboutUsActivity extends AppCompatActivity {
         arrowClicked();
     }
 
+    // Method to trigger the back button
     public void arrowClicked() {
         ImageView img = findViewById(R.id.back_logo);
         TextView txt = findViewById(R.id.back_text_view);

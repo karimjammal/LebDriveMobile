@@ -32,6 +32,8 @@ public class ScoreActivity extends AppCompatActivity {
         arrowClicked();
     }
 
+    // Method that displays the "Finish Text" conforming with
+    // the language of the previously done test
     public void finishText() {
         TextView textView = findViewById(R.id.finish_statement_text_view);
 
@@ -43,6 +45,8 @@ public class ScoreActivity extends AppCompatActivity {
             textView.setText(R.string.finish_txt_ar);
     }
 
+    // Method that displays the "Suggestion Text" based on
+    // the score of the user, and conforming with the language of the previously done test
     public void suggestionText(int score) {
         TextView textView = findViewById(R.id.eligible_text_view);
 
@@ -72,6 +76,7 @@ public class ScoreActivity extends AppCompatActivity {
         }
     }
 
+    // Method to trigger the back button
     public void arrowClicked() {
         ImageView img = findViewById(R.id.back_logo);
         TextView txt = findViewById(R.id.back_text_view);

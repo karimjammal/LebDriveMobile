@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,37 +43,45 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     private static final String french = "french";
     private static final String english = "english";
     private static final String arabic = "arabic";
+    Date currentDate;
+    long currentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createNotifChannel();
+        currentDate = new Date();
+        currentTime = currentDate.getTime();
+
 //        readQuestionsFile(english);
 //        readQuestionsFile(french);
 //        readQuestionsFile(arabic);
     }
 
-
-
+    // OnClick method that takes the user to the Start Test Activity
     public void testBtnClicked(View view) {
-        Button testBtn = findViewById(R.id.start_test_btn);
+        Button testBtn = findViewById(R.id.get_test_btn);
         Intent intent = new Intent(this, TestCatalogueActivity.class);
         startActivity(intent);
     }
 
+    // OnClick method that takes the user to the Information Activity
     public void infoBtnClicked(View view) {
         Button testBtn = findViewById(R.id.info_btn);
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
 
+    // OnClick method that takes the user to the About Us Activity
     public void aboutBtnClicked(View view) {
         Button aboutBtn = findViewById(R.id.about_btn);
         Intent intent = new Intent(this, AboutUsActivity.class);
@@ -81,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         FloatingActionButton floatBtn = findViewById(R.id.float_button);
         DialogFragment datePicker = new DatePickerFragment();
         datePicker.show(getSupportFragmentManager(), "date picker");
-        Toast.makeText(this, "Pick your exam date", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Pick your exam date", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -92,7 +103,32 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String setTime = DateFormat.getDateInstance(DateFormat.LONG).format(c.getTime());
 
+        long millisInADay = 86400 * 1000;
+        long triggerNotif = c.getTimeInMillis() - currentTime - millisInADay;
+
+        Intent intent = new Intent(MainActivity.this, NotificationTrigger.class);
+        PendingIntent pendingIntent =  PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP,
+                triggerNotif,
+                pendingIntent);
+
         Toast.makeText(this, "Exam date set to: " + setTime, Toast.LENGTH_LONG).show();
+    }
+
+    private void createNotifChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "LebDriveReminderChannel";
+            String description = "Channel for LebDrive";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyMe", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
     private void readQuestionsFile(String language) {
