@@ -27,8 +27,11 @@ public class TestActivity extends AppCompatActivity {
     Button btn2;
     Button btn3;
     int score = 0;
-    int qstNbr = 1;
+    int qstToDisplay = 1;
+    int qstNbr = 0;
+    int signsNbr = 0;
     int ticks = 0;
+    boolean btnClicked = false;
     boolean running = true;
     String[] answers = new String[3];
     Button[] buttons = new Button[3];
@@ -67,15 +70,19 @@ public class TestActivity extends AppCompatActivity {
 
     // Methods that check which test type is picked and displays accrodingly
     public void testTypePicker() {
-        if (testType.equalsIgnoreCase("questions"))
+        if (testType.equalsIgnoreCase("questions")) {
             startQuestionQuiz(language);
-        else if (testType.equalsIgnoreCase("signs"))
+        } else if (testType.equalsIgnoreCase("signs")) {
             startSignQuiz(language);
-        else {
-            for (int i = 0; i < 20; i++)
-                startQuestionQuiz(language);
-            for (int i = 0; i < 10; i++)
+        } else {
+            if (qstNbr >= 20 && signsNbr < 10) {
+                TextView questionTxt = findViewById(R.id.question_text_view);
+                questionTxt.setVisibility(View.GONE);
                 startSignQuiz(language);
+                signsNbr++;
+            } else
+                startQuestionQuiz(language);
+            qstNbr++;
         }
     }
 
@@ -87,14 +94,21 @@ public class TestActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-
-                if (qstNbr > 30) {
-                    running = false;
-                    Intent intent = new Intent(TestActivity.this, ScoreActivity.class);
-                    intent.putExtra("Score", score);
-                    intent.putExtra("Test Language", language);
-                    startActivity(intent);
-                    return;
+                if (qstToDisplay >= 30) {
+                    if (btnClicked) {
+                        running = false;
+                        Handler h2 = new Handler();
+                        h2.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(TestActivity.this, ScoreActivity.class);
+                                intent.putExtra("Score", score);
+                                intent.putExtra("Test Language", language);
+                                startActivity(intent);
+                            }
+                        }, 1000);
+                        return;
+                    }
                 }
 
                 if (running) {
@@ -241,28 +255,26 @@ public class TestActivity extends AppCompatActivity {
                     btn1.setBackgroundColor(getResources().getColor(R.color.green));
                     score++;
                     scoreTxt.setText("Score: " + score + "/30");
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn1 != buttons[answer - 1] && btn2 == buttons[answer - 1]) {
                     btn1.setBackgroundColor(getResources().getColor(R.color.red));
                     btn2.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn1 != buttons[answer - 1] && btn3 == buttons[answer - 1]) {
                     btn1.setBackgroundColor(getResources().getColor(R.color.red));
                     btn3.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 }
-
-                // Delay in displaying the next question, in order to
-                // let the users check for their correct/wrong answers
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        testTypePicker();
-                    }
-                }, 1000);
+                qstToDisplay++;
+                if (qstToDisplay == 31)
+                    btnClicked = true;
+                    // Delay in displaying the next question, in order to
+                    // let the users check for their correct/wrong answers
+                else
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            qstDisplay.setText(qstToDisplay + "/30");
+                            testTypePicker();
+                        }
+                    }, 1000);
             }
         });
 
@@ -273,25 +285,24 @@ public class TestActivity extends AppCompatActivity {
                     btn2.setBackgroundColor(getResources().getColor(R.color.green));
                     score++;
                     scoreTxt.setText("Score: " + score + "/30");
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn2 != buttons[answer - 1] && btn1 == buttons[answer - 1]) {
                     btn2.setBackgroundColor(getResources().getColor(R.color.red));
                     btn1.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn2 != buttons[answer - 1] && btn3 == buttons[answer - 1]) {
                     btn2.setBackgroundColor(getResources().getColor(R.color.red));
                     btn3.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 }
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        testTypePicker();
-                    }
-                }, 1000);
+                qstToDisplay++;
+                if (qstToDisplay == 31)
+                    btnClicked = true;
+                else
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            qstDisplay.setText(qstToDisplay + "/30");
+                            testTypePicker();
+                        }
+                    }, 1000);
             }
         });
 
@@ -302,25 +313,24 @@ public class TestActivity extends AppCompatActivity {
                     btn3.setBackgroundColor(getResources().getColor(R.color.green));
                     score++;
                     scoreTxt.setText("Score: " + score + "/30");
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn3 != buttons[answer - 1] && btn1 == buttons[answer - 1]) {
                     btn3.setBackgroundColor(getResources().getColor(R.color.red));
                     btn1.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 } else if (btn3 != buttons[answer - 1] && btn2 == buttons[answer - 1]) {
                     btn3.setBackgroundColor(getResources().getColor(R.color.red));
                     btn2.setBackgroundColor(getResources().getColor(R.color.green));
-                    qstNbr++;
-                    qstDisplay.setText(qstNbr + "/30");
                 }
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        testTypePicker();
-                    }
-                }, 1000);
+                qstToDisplay++;
+                if (qstToDisplay == 31)
+                    btnClicked = true;
+                else
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            qstDisplay.setText(qstToDisplay + "/30");
+                            testTypePicker();
+                        }
+                    }, 1000);
             }
         });
     }
